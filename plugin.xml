@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.sjwiq200.plugin.multiphotoviewer" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>PhotoViewer</name>
+    <js-module name="PhotoViewer" src="www/PhotoViewer.js">
+        <clobbers target="PhotoViewer" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="PhotoViewer">
+                <param name="android-package" value="com.sjwiq200.plugin.multiphotoviewer.PhotoViewer" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml">
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="com.sjwiq200.plugin.multiphotoviewer.MultiPhotoActivity" />
+        </config-file>
+        <source-file src="src/android/PhotoViewer.java" target-dir="src/com/sjwiq200/plugin/multiphotoviewer" />
+        <source-file src="src/android/MultiPhotoActivity.java" target-dir="src/com/sjwiq200/plugin/multiphotoviewer" />
+        <source-file src="src/android/HackyViewPager.java" target-dir="src/com/sjwiq200/plugin/multiphotoviewer" />
+        <source-file src="src/android/layout/activity_multi_photo.xml" target-dir="res/layout" />
+        <source-file src="src/android/layout/layout_viewpager_childview_photoview.xml" target-dir="res/layout" />
+        <framework src="src/android/photoviewer.gradle" custom="true" type="gradleReference" />
+    </platform>
+</plugin>

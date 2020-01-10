@@ -1,0 +1,17 @@
+{
+  "name": "com.sjwiq200.plugin.multiphotoviewer",
+  "version": "0.0.1",
+  "cordova": {
+    "id": "com.sjwiq200.plugin.multiphotoviewer",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

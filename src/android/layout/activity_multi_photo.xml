@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".MultiPhotoActivity" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="#e8e8e8">
+
+
+        <com.sjwiq200.plugin.multiphotoviewer.HackyViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/pageText"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="15dp"
+            android:background="#000000"
+            android:gravity="center"
+            android:minWidth="55dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="#e8e8e8" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
