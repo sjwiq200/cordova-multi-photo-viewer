@@ -1,7 +1,5 @@
 package com.sjwiq200.plugin.multiphotoviewer;
 
-import com.sjwiq200.cordova.photoviewer.R;
-
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -113,15 +111,14 @@ public class MultiPhotoActivity extends Activity {
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
-            View itemView = mLayoutInflater.inflate(R.layout.layout_viewpager_childview_photoview, container, false);
-            PhotoView imageView = (PhotoView) itemView.findViewById(R.id.imageView);
+            View itemView = mLayoutInflater.inflate(getApplication().getResources().getIdentifier("layout_viewpager_childview_photoview", "layout", getApplication().getPackageName() ), container, false);
+            PhotoView imageView = (PhotoView) itemView.findViewById(getApplication().getResources().getIdentifier("imageView", "id", getApplication().getPackageName() ));
             imageView.setMaximumScale(10.0f);
 
             final PhotoView imageView2 = imageView;
 
             container.addView(itemView);
 
-            PhotoViewer.callbackContext.success("tgqtqtq :: "+ source.get(position));
             Glide.with(mContext).load(source.get(position))
                     .into(new SimpleTarget<Drawable>() {
                         @Override
