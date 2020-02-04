@@ -12,7 +12,7 @@
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml">
         </config-file>
-        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+        <config-file target="AndroidManifest.xml" parent="application">
             <activity android:name="com.sjwiq200.plugin.multiphotoviewer.MultiPhotoActivity" android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"/>
         </config-file>
         <source-file src="src/android/PhotoViewer.java" target-dir="src/com/sjwiq200/plugin/multiphotoviewer" />
