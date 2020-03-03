@@ -8,6 +8,8 @@ cordova plugin add https://github.com/sjwiq200/cordova-multi-photo-viewer.git
 
 API
 
+#url
+
 PhotoViewer.show({url: [
   'https://sjwiq200/image',
   'https://sjwiq200/image',
@@ -15,6 +17,22 @@ PhotoViewer.show({url: [
   'https://sjwiq200/image'
 
 ]})
+
+#image_from
+PhotoViewer.show(
+{url: [
+  'https://sjwiq200/image',
+  'https://sjwiq200/image',
+  'https://sjwiq200/image',
+  'https://sjwiq200/image'
+],
+image_from: [
+  'sjwiq200',
+  'sjwiq100',
+  'sjwiq300',
+  'sjwiq400'
+]
+})
 
 
 Contact
