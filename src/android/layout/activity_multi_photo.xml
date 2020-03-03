@@ -40,7 +40,7 @@
                 android:layout_toLeftOf="@id/pageText"
                 android:layout_margin="15dp"
                 android:background="#000000"
-                android:gravity="center"
+                android:gravity="left|center"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:textColor="#ffffff"
