@@ -27,12 +27,14 @@ import java.util.ArrayList;
 
 public class MultiPhotoActivity extends Activity {
     public static ArrayList source;
+    public static ArrayList<String> imageFroms;
 
     RequestOptions requestOptions;
 
     public CustomPagerAdapter customPagerAdapter = null;
     public ViewPager viewPager = null;
     public TextView pageText = null;
+    public TextView pageFrom = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,6 +58,13 @@ public class MultiPhotoActivity extends Activity {
         String text = "1/" + this.source.size();
         this.pageText.setText(text);
 
+        this.pageFrom = findViewById(getApplication().getResources().getIdentifier("pageFrom", "id", getApplication().getPackageName() ));
+        this.pageFrom.setText("");
+        if (imageFroms != null && imageFroms.size() > 0) {
+            this.pageFrom.setText(imageFroms.get(0));
+        }
+
+
         this.viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -67,6 +76,16 @@ public class MultiPhotoActivity extends Activity {
                 ///페이지 변경 체크
 //                binding.setIsLastPage((imageList.size() != 0 && (position + 1 == imageList.size())));
                 pageText.setText((position + 1)+"/" + source.size());
+
+                if (imageFroms == null) {
+                    pageFrom.setText("");
+                } else {
+                    if ((imageFroms.size() - 1) >= position) {
+                        pageFrom.setText(imageFroms.get(position));
+                    } else {
+                        pageFrom.setText("");
+                    }
+                }
             }
 
             @Override

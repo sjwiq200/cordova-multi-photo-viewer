@@ -35,18 +35,29 @@ public class PhotoViewer extends CordovaPlugin {
 
     private void launchActivity() {
         if (this.args != null) {
-
-
             Intent intent = new Intent(this.cordova.getActivity(), com.sjwiq200.plugin.multiphotoviewer.MultiPhotoActivity.class);
             try {
                 ArrayList listData = new ArrayList();
-                JSONArray jArray = this.args.getJSONObject(0).getJSONArray("url");
+                JSONObject jsonObject = this.args.getJSONObject(0);
+                JSONArray jArray = jsonObject.getJSONArray("url");
                 if (jArray != null) {
                     for (int i=0;i<jArray.length();i++){
                         listData.add(jArray.getString(i));
                     }
                 }
+                ArrayList imageFromList = new ArrayList();
+                if (jsonObject.has("image_from")) {
+                    JSONArray fromJArray = jsonObject.getJSONArray("image_from");
+                    if (fromJArray != null) {
+                        for (int i = 0; i < fromJArray.length(); i++ ) {
+                            imageFromList.add(fromJArray.getString(i));
+                        }
+                    }
+                }
+
+
                 MultiPhotoActivity.source = listData;
+                MultiPhotoActivity.imageFroms = imageFromList;
                 this.cordova.getActivity().startActivity(intent);
                 this.callbackContext.success("success launchActivity");
             } catch (Exception e) {
